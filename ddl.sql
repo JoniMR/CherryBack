@@ -108,6 +108,7 @@ ALTER TABLE cherrytrade.users OWNER TO admin;
 --
 
 CREATE TABLE cherrytrade.users_cryptos (
+    user_crypto_id uuid NOT NULL,
     user_id uuid NOT NULL,
     crypto_id uuid NOT NULL,
     amount numeric(50,2) NOT NULL
@@ -164,7 +165,13 @@ ALTER TABLE ONLY cherrytrade.users
 --
 
 ALTER TABLE ONLY cherrytrade.users_cryptos
-    ADD CONSTRAINT usr_crpt PRIMARY KEY (user_id, crypto_id);
+    ADD CONSTRAINT usr_crpt PRIMARY KEY (user_crypto_id);
+
+ALTER TABLE ONLY cherrytrade.users_cryptos
+    ADD CONSTRAINT users_cryptos_user_id_fkey FOREIGN KEY (user_id) REFERENCES cherrytrade.users(user_id) NOT VALID;
+
+ALTER TABLE ONLY cherrytrade.users_cryptos
+    ADD CONSTRAINT users_cryptos_crypto_id_fkey FOREIGN KEY (crypto_id) REFERENCES cherrytrade.cryptos(crypto_id) NOT VALID;
 
 
 -- Completed on 2023-03-21 10:38:54
@@ -198,13 +205,13 @@ INSERT INTO cherrytrade.cryptos (crypto_id, name, value, icon, asset, stock, cat
 INSERT INTO cherrytrade.cryptos (crypto_id, name, value, icon, asset, stock, category) OVERRIDING SYSTEM VALUE VALUES ('35b438df-ae9c-4cb7-a71d-bc5ff0696239', 'UNUS SED LEO', 3.39, 'https://res.cloudinary.com/datafgjir/image/upload/v1681167031/leo_hml47e.png', 'LEO', 3100000, 'NFT');
 INSERT INTO cherrytrade.cryptos (crypto_id, name, value, icon, asset, stock, category) OVERRIDING SYSTEM VALUE VALUES ('6742c233-0722-4e67-861c-a112844820d2', 'Cosmos', 11.19, 'https://res.cloudinary.com/datafgjir/image/upload/v1681167034/atom_t1pcvl.png', 'ATOM', 850000, 'Popular');
 
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', '18a60c12-2358-49ae-a1c1-986e2f299e25', 0.57);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', 'f1aad756-90a9-467a-acdc-50cac85d385c', 3.14);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', 'cf3d48c3-5931-43c6-bd70-152725e7ea0f', 140);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', '33778185-6be0-4684-a895-29045d6d6416', 1000);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('06582fd1-e18a-4e76-8a1c-68f0eb4b151b', '18a60c12-2358-49ae-a1c1-986e2f299e25', 50);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('06582fd1-e18a-4e76-8a1c-68f0eb4b151b', '9565e265-f93a-4584-a4ad-2d9f7feed4c5', 9000000000);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('06582fd1-e18a-4e76-8a1c-68f0eb4b151b', 'b7d9782e-4f31-4d57-85b5-8815f6c485ed', 450000);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('06582fd1-e18a-4e76-8a1c-68f0eb4b151b', 'd46ddb99-d133-462d-ac60-74ec4273670d', 10000);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('06582fd1-e18a-4e76-8a1c-68f0eb4b151b', 'f1aad756-90a9-467a-acdc-50cac85d385c', 500.5);
-INSERT INTO cherrytrade.users_cryptos (user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('9efedc91-dae2-4e7f-a12a-0ac7d83175ff', '4eebc127-b2f5-4ef0-98ae-c1d5eaba16b2', 20000);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('bf7a90a8-9967-46fc-872c-d11eb9d60e69', '236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', '18a60c12-2358-49ae-a1c1-986e2f299e25', 0.57);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('531a80c2-dd19-4523-b4c8-0ad8847b42b7', '236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', 'f1aad756-90a9-467a-acdc-50cac85d385c', 3.14);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('852cb99a-5ee5-4f89-ac34-1c3e236a2630', '236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', 'cf3d48c3-5931-43c6-bd70-152725e7ea0f', 140);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('ad8a0322-8e35-474d-9b50-31f8d2740cd9', '236e9cb4-d8a8-47d0-819d-3d7de3e7b5ee', '33778185-6be0-4684-a895-29045d6d6416', 1000);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('74f29226-5464-4d16-af26-596f0e5633ad', '06582fd1-e18a-4e76-8a1c-68f0eb4b151b', '18a60c12-2358-49ae-a1c1-986e2f299e25', 50);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('11524331-b26b-430e-966a-3063fe7d2375', '06582fd1-e18a-4e76-8a1c-68f0eb4b151b', '9565e265-f93a-4584-a4ad-2d9f7feed4c5', 9000000000);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('eb7a6eca-38cc-4d49-b950-f914c27fb64c', '06582fd1-e18a-4e76-8a1c-68f0eb4b151b', 'b7d9782e-4f31-4d57-85b5-8815f6c485ed', 450000);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('4b20a5de-d974-4e97-8a7d-d9e4747dee35', '06582fd1-e18a-4e76-8a1c-68f0eb4b151b', 'd46ddb99-d133-462d-ac60-74ec4273670d', 10000);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('2a749a58-320a-4a5f-97a6-3d2b6b144e4f', '06582fd1-e18a-4e76-8a1c-68f0eb4b151b', 'f1aad756-90a9-467a-acdc-50cac85d385c', 500.5);
+INSERT INTO cherrytrade.users_cryptos (user_crypto_id, user_id, crypto_id, amount) OVERRIDING SYSTEM VALUE VALUES ('7a0506eb-3bfb-4c1d-b86b-1fe5d25fa6b3', '9efedc91-dae2-4e7f-a12a-0ac7d83175ff', '4eebc127-b2f5-4ef0-98ae-c1d5eaba16b2', 20000);

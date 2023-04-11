@@ -5,9 +5,9 @@ export const connect = () => {
     const DB_HOSTNAME = 'localhost'
     const DB_PORT = 5432
     const DB_NAME = 'crypto'
-    const DB_USERNAME = 'Admin'
+    const DB_USERNAME = 'admin'
     const DB_PASSWORD = 'admin'
-    const DB_SCHEMA = 'public'
+    const DB_SCHEMA = 'cherrytrade'
     const DB_DIALECT : any = 'postgres'
 
     const sequelize = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {

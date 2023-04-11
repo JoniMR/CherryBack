@@ -72,6 +72,7 @@ export class UsersCryptosService {
 
   parsePojoIntoDTO(userscryptosPojo: UsersCryptosPojo): UsersCryptosDTO {
     const userscryptosDTO: UsersCryptosDTO = {
+      user_crypto_id: userscryptosPojo.dataValues.user_crypto_id,
       user_id: userscryptosPojo.dataValues.user_id,
       crypto_id: userscryptosPojo.dataValues.crypto_id,
       amount: userscryptosPojo.dataValues.amount,

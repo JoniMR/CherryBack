@@ -3,7 +3,7 @@ import { STRING, NUMBER, DATE } from "sequelize";
 
 @Table({
   freezeTableName: true,
-  schema: 'public',
+  schema: 'cherrytrade',
   tableName: "users",
   createdAt: false,
   updatedAt: false
@@ -15,12 +15,6 @@ export class UserPojo extends Model {
     field: 'user_id'
   })
   user_id: string
-
-  @Column({
-    type: STRING,
-    field: 'username'
-  })
-  username: string
 
   @Column({
     type: STRING,
@@ -57,6 +51,12 @@ export class UserPojo extends Model {
     field: 'birthdate'
   })
   birthdate: Date
+
+  @Column({
+    type: STRING,
+    field: 'img'
+  })
+  img: string
 
   @Column({
     type: NUMBER,

@@ -3,12 +3,19 @@ import { STRING, NUMBER } from "sequelize";
 
 @Table({
   freezeTableName: true,
-  schema: 'public',
+  schema: 'cherrytrade',
   tableName: "users_cryptos",
   createdAt: false,
   updatedAt: false
 })
 export class UsersCryptosPojo extends Model {
+  @Column({
+    primaryKey: true,
+    type: STRING,
+    field: 'user_crypto_id'
+  })
+  user_crypto_id: string
+
   @Column({
     primaryKey: true,
     type: STRING,

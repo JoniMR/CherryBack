@@ -73,13 +73,13 @@ export class UserService {
   parsePojoIntoDTO(userPojo: UserPojo): UserDTO {
     const userDTO: UserDTO = {
       user_id: userPojo.dataValues.user_id,
-      username: userPojo.dataValues.username,
       password: userPojo.dataValues.password,
       email: userPojo.dataValues.email,
       name: userPojo.dataValues.name,
       surname1: userPojo.dataValues.surname1,
       surname2: userPojo.dataValues.surname2,
       birthdate: userPojo.dataValues.birthdate,
+      img: userPojo.dataValues.img,
       funds: userPojo.dataValues.funds,
     };
 

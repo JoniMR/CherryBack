@@ -3,10 +3,10 @@ import express from 'express'
 
 const router = express.Router()
 
-router.get('/all', userController.getAllUsers)
-router.get('/get/:id', userController.getUserById)
-router.post('/add', userController.addUser)
-router.put('/update', userController.updateUser)
+router.get('/get/all', userController.getAllUsers)          // Funciona
+router.get('/get/:id', userController.getUserById)          // Funciona
+router.post('/add', userController.addUser)                 // Funciona
+router.put('/update', userController.updateUser)            // Funciona
 
 export default router
 module.exports = router

@@ -3,7 +3,7 @@ import { STRING, NUMBER } from "sequelize";
 
 @Table({
   freezeTableName: true,
-  schema: 'public',
+  schema: 'cherrytrade',
   tableName: "cryptos",
   createdAt: false,
   updatedAt: false
@@ -46,4 +46,9 @@ export class CryptoPojo extends Model {
   })
   stock: number
   
+  @Column({
+    type: STRING,
+    field: 'category'
+  })
+  category: string
 }

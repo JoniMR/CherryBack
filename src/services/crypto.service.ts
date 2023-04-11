@@ -78,6 +78,7 @@ export class CryptoService {
       icon: cryptoPojo.dataValues.icon,
       asset: cryptoPojo.dataValues.asset,
       stock: cryptoPojo.dataValues.stock,
+      category: cryptoPojo.dataValues.category
     };
 
     return cryptoDTO;

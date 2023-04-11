@@ -3,8 +3,8 @@ import express from 'express'
 
 const router = express.Router()
 
-router.get('/all', userscryptosController.getAllUsersCryptos)
-router.get('/get/:id', userscryptosController.getUsersCryptosById)
+router.get('/get/all', userscryptosController.getAllUsersCryptos)           // Funciona
+router.get('/get/:id', userscryptosController.getUsersCryptosById)          // Funciona
 router.post('/add', userscryptosController.addUsersCryptos)
 router.put('/update', userscryptosController.updateUsersCryptos)
 
