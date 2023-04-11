@@ -70,15 +70,32 @@ export class UserService {
     return cryptoPromise;
   }
 
+  async getUserbyEmailAndPassword(
+    email: string,
+    password: string
+  ): Promise<UserDTO> {
+    const usersPromise = await this._userRepository
+      .getUserbyEmailAndPassword(email, password)
+      .then((userAsPojo) => {
+        let userAsDTO = this.parsePojoIntoDTO(userAsPojo);
+        return userAsDTO;
+      })
+      .catch((error) => {
+        console.error(error);
+        throw error;
+      });
+    return usersPromise;
+  }
+
   parsePojoIntoDTO(userPojo: UserPojo): UserDTO {
     const userDTO: UserDTO = {
       user_id: userPojo.dataValues.user_id,
-      password: userPojo.dataValues.password,
-      email: userPojo.dataValues.email,
       name: userPojo.dataValues.name,
       surname1: userPojo.dataValues.surname1,
       surname2: userPojo.dataValues.surname2,
       birthdate: userPojo.dataValues.birthdate,
+      email: userPojo.dataValues.email,
+      password: userPojo.dataValues.password,
       img: userPojo.dataValues.img,
       funds: userPojo.dataValues.funds,
     };
@@ -87,7 +104,6 @@ export class UserService {
   }
 
   parseDTOIntoPojo(userDTO: UserDTO): UserPojo {
-
     return userDTO as UserPojo;
   }
 }

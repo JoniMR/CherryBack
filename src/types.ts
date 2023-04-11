@@ -10,12 +10,12 @@ export class CryptoDTO {
 
 export class UserDTO {
     user_id: string
-    password: string
-    email: string
     name: string
     surname1: string
     surname2?: string
     birthdate: Date
+    email: string
+    password: string
     img: string
     funds: number
 }

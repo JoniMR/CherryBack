@@ -1,5 +1,6 @@
 import { Table, Column, Model } from "sequelize-typescript";
 import { STRING, NUMBER, DATE } from "sequelize";
+import { v4 as uuid } from 'uuid';
 
 @Table({
   freezeTableName: true,
@@ -14,19 +15,7 @@ export class UserPojo extends Model {
     type: STRING,
     field: 'user_id'
   })
-  user_id: string
-
-  @Column({
-    type: STRING,
-    field: 'password'
-  })
-  password: string
-
-  @Column({
-    type: STRING,
-    field: 'email'
-  })
-  email: string
+  user_id: string = uuid();
 
   @Column({
     type: STRING,
@@ -51,6 +40,18 @@ export class UserPojo extends Model {
     field: 'birthdate'
   })
   birthdate: Date
+
+  @Column({
+    type: STRING,
+    field: 'email'
+  })
+  email: string
+
+  @Column({
+    type: STRING,
+    field: 'password'
+  })
+  password: string
 
   @Column({
     type: STRING,

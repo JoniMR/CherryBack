@@ -49,4 +49,20 @@ export const userController = {
       res.sendStatus(500);
     }
   },
+
+  getUserbyEmailAndPassword: (req: any, res: any) => {
+    console.log("################################")
+    console.log(req.body.email)
+    const email = req.body.email
+    const password = req.body.password
+    userService
+      .getUserbyEmailAndPassword(email,password)
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((excepcion) => {
+        console.error(excepcion);
+        res.send(500);
+      });
+  },
 };
