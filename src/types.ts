@@ -1,6 +1,6 @@
 export class CryptoDTO {
     crypto_id: string
-    name: string
+    crypto_name: string
     value: number
     icon?: string
     asset: string
@@ -10,7 +10,7 @@ export class CryptoDTO {
 
 export class UserDTO {
     user_id: string
-    name: string
+    username: string
     surname1: string
     surname2?: string
     birthdate: Date
@@ -18,6 +18,8 @@ export class UserDTO {
     password: string
     img: string
     funds: number
+    userscrypto?: UsersCryptosDTO[]
+    cryptos?: CryptoDTO[]
 }
 
 export class UsersCryptosDTO {

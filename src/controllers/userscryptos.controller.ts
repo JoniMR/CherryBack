@@ -14,10 +14,10 @@ export const userscryptosController = {
       });
   },
 
-  getUsersCryptosById: (req: any, res: any) => {
+  getUserCryptosById: (req: any, res: any) => {
     try {
       const userId = req.params.id;
-      userscryptosService.getUsersCryptosById(userId).then((result) => {
+      userscryptosService.getUserCryptosById(userId).then((result) => {
         res.json(result);
       });
     } catch (excepcion) {

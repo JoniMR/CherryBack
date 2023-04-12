@@ -65,4 +65,17 @@ export const userController = {
         res.send(500);
       });
   },
+
+  getUserCryptoById : (req: any, res: any) => {
+    try {
+      const userId = req.params.id;
+      console.log(userId);
+      userService.getUserCryptoById(userId).then(result => {
+        res.json(result);
+      });
+    } catch (excepcion) {
+      console.log(excepcion);
+      res.sendStatus(500);
+    }
+  },
 };

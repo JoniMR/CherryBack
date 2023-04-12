@@ -1,6 +1,8 @@
 import { Table, Column, Model } from "sequelize-typescript";
 import { STRING, NUMBER } from "sequelize";
-
+import { UsersCryptosPojo } from "./userscryptos.model";
+import { HasMany, BelongsToMany } from "sequelize-typescript";
+import { UserPojo } from "./user.model";
 @Table({
   freezeTableName: true,
   schema: 'cherrytrade',
@@ -18,9 +20,9 @@ export class CryptoPojo extends Model {
 
   @Column({
     type: STRING,
-    field: 'name'
+    field: 'crypto_name'
   })
-  name: string
+  crypto_name: string
 
   @Column({
     type: NUMBER,
@@ -51,4 +53,10 @@ export class CryptoPojo extends Model {
     field: 'category'
   })
   category: string
+
+  @HasMany(() => UsersCryptosPojo)
+  userscrypto: UsersCryptosPojo[]
+
+  @BelongsToMany(() => UserPojo, () => UsersCryptosPojo)
+  users: UserPojo[];
 }

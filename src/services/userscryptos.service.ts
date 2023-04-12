@@ -27,9 +27,9 @@ export class UsersCryptosService {
     return userscryptosPromise;
   }
 
-  async getUsersCryptosById(id: any): Promise<UsersCryptosDTO | undefined> {
+  async getUserCryptosById(id: any): Promise<UsersCryptosDTO | undefined> {
     const userscryptosPromise = await this._userscryptosRepository
-      .getUsersCryptosById(id)
+      .getUserCryptosById(id)
       .then((userscryptosAsPojo) => {
         if (!!userscryptosAsPojo) {
           return this.parsePojoIntoDTO(userscryptosAsPojo);

@@ -1,13 +1,20 @@
 import { UserPojo } from "../models/user.model";
 import { connect } from "../config/user.db.config";
+import { CryptoPojo } from "../models/crypto.model";
+import { UsersCryptosPojo } from "../models/userscryptos.model";
 
 export class UserRepository {
   _db: any = {};
   _userRepository: any;
+  _cryptoRepository: any;
+  _userscryptosRepository: any;
 
   constructor() {
     this._db = connect();
     this._userRepository = this._db.sequelize.getRepository(UserPojo);
+    this._cryptoRepository = this._db.sequelize.getRepository(CryptoPojo);
+    this._userscryptosRepository =
+      this._db.sequelize.getRepository(UsersCryptosPojo);
   }
 
   async getAllUsers(): Promise<UserPojo[]> {
@@ -54,19 +61,47 @@ export class UserRepository {
     }
   }
 
-  async getUserbyEmailAndPassword(email:string, password:string): Promise<UserPojo> {
+  async getUserbyEmailAndPassword(
+    email: string,
+    password: string
+  ): Promise<UserPojo> {
     try {
-        const user = await this._userRepository.findOne({
-            where: {
-                email: email,
-                password: password
-            }
-        });
-        console.log("user:::", user);
-        return user;
+      const user = await this._userRepository.findOne({
+        where: {
+          email: email,
+          password: password,
+        },
+      });
+      console.log("user:::", user);
+      return user;
     } catch (error) {
-        console.error(error);
-    return error;
+      console.error(error);
+      return error;
     }
+  }
+
+  async getUserCryptoById(id: string): Promise<UserPojo | undefined> {
+    try {
+      return this._userRepository.findOne({
+        where: {
+          user_id: id,
+        },
+        include: [
+          {
+            model: this._userscryptosRepository,
+            include: [
+              {
+                model: this._cryptoRepository,
+              },
+            ],
+          },
+        ],
+      });
+    } catch (error) {
+      console.error(error);
+      return error;
+    }
+  }
 }
-}
+
+

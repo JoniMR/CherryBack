@@ -1,5 +1,9 @@
 import { Table, Column, Model } from "sequelize-typescript";
 import { STRING, NUMBER } from "sequelize";
+import { CryptoPojo } from "./crypto.model";
+import { UserPojo } from "./user.model";
+import { BelongsTo } from "sequelize-typescript";
+import { ForeignKey } from "sequelize-typescript";
 
 @Table({
   freezeTableName: true,
@@ -17,22 +21,28 @@ export class UsersCryptosPojo extends Model {
   user_crypto_id: string
 
   @Column({
-    primaryKey: true,
-    type: STRING,
-    field: 'user_id'
+    type: NUMBER,
+    field: 'amount'
   })
-  user_id: string
+  amount: number
 
+  @ForeignKey(() => CryptoPojo)
   @Column({
-    primaryKey: true,
     type: STRING,
     field: 'crypto_id'
   })
   crypto_id: string
 
+  @ForeignKey(() => UserPojo)
   @Column({
-    type: NUMBER,
-    field: 'amount'
+    type: STRING,
+    field: 'user_id'
   })
-  amount: number
+  user_id: string
+
+  @BelongsTo(() => CryptoPojo)
+  crypto: CryptoPojo;
+
+  @BelongsTo(() => UserPojo)
+  user: UserPojo;
 }

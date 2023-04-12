@@ -1,5 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import { CryptoPojo } from "../models/crypto.model";
+import { UserPojo } from "../models/user.model";
+import { UsersCryptosPojo } from "../models/userscryptos.model";
 
 export const connect = () => {
     const DB_HOSTNAME = 'localhost'
@@ -24,7 +26,7 @@ export const connect = () => {
         }
     })
 
-    sequelize.addModels([CryptoPojo])
+    sequelize.addModels([CryptoPojo, UsersCryptosPojo, UserPojo])
     const db : any = {}
     db.Sequelize = Sequelize
     db.sequelize = sequelize

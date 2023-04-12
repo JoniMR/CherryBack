@@ -73,7 +73,7 @@ export class CryptoService {
   parsePojoIntoDTO(cryptoPojo: CryptoPojo): CryptoDTO {
     const cryptoDTO: CryptoDTO = {
       crypto_id: cryptoPojo.dataValues.crypto_id,
-      name: cryptoPojo.dataValues.name,
+      crypto_name: cryptoPojo.dataValues.crypto_name,
       value: cryptoPojo.dataValues.value,
       icon: cryptoPojo.dataValues.icon,
       asset: cryptoPojo.dataValues.asset,
