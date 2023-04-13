@@ -22,7 +22,7 @@ export class UsersCryptosRepository {
     }
   }
 
-  async getUserCryptosById(id: number): Promise<UsersCryptosPojo | undefined> {
+async getUserCryptosById(id: number): Promise<UsersCryptosPojo | undefined> {
     try {
       return await this._userscryptoRepository.findByPk(id);
     } catch (error) {
@@ -45,15 +45,12 @@ export class UsersCryptosRepository {
 
   async updateUsersCryptos(newUsersCryptos: UsersCryptosPojo): Promise<string> {
     try {
-      newUsersCryptos = await this._userscryptoRepository.update(
-        newUsersCryptos,
-        {
-          where: {
-            user_id: newUsersCryptos.user_id,
-            crypto_id: newUsersCryptos.crypto_id,
-          },
-        }
-      );
+      newUsersCryptos = await this._userscryptoRepository.update(newUsersCryptos, {
+        where: {
+          user_id: newUsersCryptos.user_id,
+          crypto_id: newUsersCryptos.crypto_id,
+        },
+      });
       return newUsersCryptos.id;
     } catch (error) {
       console.error(error);
