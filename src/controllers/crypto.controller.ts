@@ -1,4 +1,5 @@
 import { CryptoService } from "./../services/crypto.service";
+import logger from "../utils/logger";
 const cryptoService: CryptoService = new CryptoService();
 
 export const cryptoController = {
@@ -7,6 +8,7 @@ export const cryptoController = {
       .getAllCryptos()
       .then((result) => {
         res.json(result);
+        logger.info('[CLIENT]: Cryptos loaded')
       })
       .catch((excepcion) => {
         console.error(excepcion);

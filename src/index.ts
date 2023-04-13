@@ -1,7 +1,11 @@
 import express from "express";
-import cryptoRouter from './routes/crypto.routes'
-import userRouter from './routes/user.routes'
-import userscryptosRouter from './routes/userscryptos.routes'
+import logger from './utils/logger'
+import cryptoRouter from './routes/crypto.routes';
+import userRouter from './routes/user.routes';
+import userscryptosRouter from './routes/userscryptos.routes';
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 const cors = require('cors')
@@ -24,5 +28,5 @@ app.use('/api/user', userRouter)
 app.use('/api/userscryptos', userscryptosRouter)
 
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`)
+  logger.info(`[SERVER]: Server is running at http://localhost:${PORT}`);
 });

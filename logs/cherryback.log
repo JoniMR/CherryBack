@@ -1,0 +1,75 @@
+
+[13/04/2023 - 06:45:41] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:47:31] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:48:12] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:48:14] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:48:16] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:48:44] info: Usuario autenticado. {}
+[13/04/2023 - 06:51:00] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:51:32] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:51:34] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:51:39] info: Cryptos loaded. {}
+[13/04/2023 - 06:51:49] info: Logged user. {}
+[13/04/2023 - 06:51:52] info: Cryptos loaded. {}
+[13/04/2023 - 06:52:18] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:52:24] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:52:40] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:53:11] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:54:59] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:55:18] info: Logged user. {}
+[13/04/2023 - 06:55:26] info: Cryptos loaded. {}
+[13/04/2023 - 06:56:09] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:56:13] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:56:20] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:56:37] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:56:51] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:56:53] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:56:55] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:56:58] info: [CLIENT]: Cryptos loaded.. {}
+[13/04/2023 - 06:57:12] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:57:19] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 06:57:22] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 06:57:41] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 06:57:45] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:07:20] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:08:01] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:08:22] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:08:33] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:12:50] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:13:35] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:14:22] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:16:07] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:16:09] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:16:13] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:16:38] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 07:16:42] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:17:32] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:18:40] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:19:08] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:19:20] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 07:21:59] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:22:30] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:22:31] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:26:32] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:26:48] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:27:12] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:27:40] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:29:21] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:29:55] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:30:10] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:59:24] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 07:59:33] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 08:00:14] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 08:03:00] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 08:05:12] info: Registered user. {}
+[13/04/2023 - 08:05:29] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 08:05:57] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 08:06:08] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 08:06:34] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 08:06:37] info: [CLIENT]: Cryptos loaded. {}
+[13/04/2023 - 08:06:59] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 08:13:34] info: [SERVER]: Server is running at http://localhost:5000. {}
+[13/04/2023 - 08:17:32] info: [CLIENT]: Logged user. {}
+[13/04/2023 - 08:18:20] info: Registered user. {}
+[13/04/2023 - 08:24:22] info: Registered user. {}
+[13/04/2023 - 08:24:38] info: Registered user. {}

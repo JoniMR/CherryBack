@@ -1,4 +1,6 @@
 import { UserService } from "../services/user.service";
+import logger from "../utils/logger";
+
 const userService: UserService = new UserService();
 
 export const userController = {
@@ -31,6 +33,7 @@ export const userController = {
       const newUser = req.body;
       userService.addUser(newUser).then((result) => {
         res.json(result);
+        logger.info('Registered user')
       });
     } catch (excepcion) {
       console.log(excepcion);
@@ -51,14 +54,13 @@ export const userController = {
   },
 
   getUserbyEmailAndPassword: (req: any, res: any) => {
-    console.log("################################")
-    console.log(req.body.email)
     const email = req.body.email
     const password = req.body.password
     userService
       .getUserbyEmailAndPassword(email,password)
       .then((result) => {
         res.json(result);
+        logger.info('[CLIENT]: Logged user');
       })
       .catch((excepcion) => {
         console.error(excepcion);
